@@ -1,0 +1,342 @@
+@import 'global';
+
+// $primary-color:#FFEFE7;
+// $secundary-color:#FFDAC6;
+// $tertiary-color:#BABD8D;
+// $primary-text-color:#7C6A0A;
+// $additional-color: #FA9500;
+// $paragraph-size: 1.563rem;
+// $font-stack: 'IBM Plex Sans' , sans-serif;
+
+@mixin flexCenter($direction, $content, $align) {
+    display: flex;
+    flex-direction: $direction;
+    justify-content: $content;
+    align-items: $align;
+}
+
+@mixin buttonStyle() {
+    button{
+        background: none;
+        border-style: none;
+        cursor: pointer;
+        &:hover {
+            transform: scale(1.2);
+            transition-duration: 0.2s;
+        }
+    }
+}
+
+@mixin svgStyle ($color, $width, $height){
+    svg {
+        width: $width;
+        height: $height;
+        path {
+            stroke: $color; 
+        }
+    } 
+}
+
+// body{
+//     margin: 0px;
+//     padding: 0px;
+//     background-color: $primary-color;
+//     font-family: $font-stack;
+//     color: $primary-text-color;
+//     svg path {
+//         stroke: currentColor;        
+//     }
+// }
+header{
+    position:fixed;
+    top:0;
+    border-top: 5px solid rgb(52, 53, 51);
+    width:100%;
+}
+
+.navbar {
+    inline-size: 100%;
+    padding-inline: 2.5rem;
+    @include flexCenter(row, space-between, center);
+    background-color: $secundary-color;
+
+    .navbar__logo {
+        font-family: 'IBM Plex Sans', sans-serif;
+        font-size: 3.5rem;
+        font-weight: 400;
+        font-style: italic;
+        text-shadow:
+            -1px -1px 3px #999,
+            0 0 1px darkred,
+            1px 1px 1px $additional-color,
+            2px 2px 1px #555,
+            3px 3px 1px #222,
+            4px 4px 1px #000;
+    }
+
+    .navbar__icons {
+        display: flex;
+        gap: 0.5rem;
+        @include buttonStyle;
+        @include svgStyle($primary-text-color, 30px, 30px);
+        
+        .navbar__icons--profile {
+            &:hover {
+                svg path {
+                    stroke: #E86424;        
+                }
+            }
+        }
+    }
+}
+
+article {
+    width: auto;
+    padding: 20rem 3rem 2.5rem;
+    @include flexCenter(row, space-between, start);
+
+    .main__info {
+        @include flexCenter(column, center, start);
+        padding-top: 2.5rem;
+        gap: 2.5rem;
+    }
+
+    h1 {
+        font-size: 3.5rem;
+        margin-top: 30px;
+        padding: 0px;
+        font-weight: 600;
+        // line-height: 78px;
+    }
+
+    p {
+        width: 45%;
+        font-size: $font-p;
+        font-weight: 400;
+        line-height: 24px;
+    }
+    
+    // @include buttonStyle;
+    .btn-principal {
+        @extend .btn;
+        width: 18vw;
+        height: 5vw;
+        font-weight: 700;
+        font-size: 2.3rem;
+        border-radius: 3.5rem;
+        color: $primary-color;
+        background-color: $additional-color;
+    }
+
+    .main_image {
+        img {
+            width: 30vw;
+            height: 75vh;
+            border-radius: 19px;
+            box-shadow: 5px 5px 10px;
+        }
+    }
+}
+
+section {
+    width: auto;
+    height: auto;
+    padding: 0px 30px;
+
+    h2 {
+        font-size: $font-h1;
+        font-weight: 700;
+        padding-bottom: 3.75rem;
+    }
+
+    .product__healthcare {
+
+        .product__section {
+            width: auto;
+            height: auto;
+            padding-bottom: 30px;
+            @include flexCenter(row, center, start center);
+            flex-wrap: wrap;
+            column-gap: 200px;
+            row-gap: 80px;
+        }
+
+        .product__section--card {
+            width: 20vw;
+            height: 55vh;
+            background-color: $secundary-color;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 5px 5px 10px $primary-text-color;
+
+            &:hover {
+                transform: scale(1.1);
+                transition-duration: 0.2s;
+            }
+
+            .product__section--icon {
+                width: 100%;
+                height: auto;
+                @include flexCenter(row, flex-end, center);
+                @include svgStyle($primary-text-color, 31px, 31px);
+                padding-bottom: 12px;
+            }
+    
+            .product__section--img {
+                width: 100%;
+                height: auto;
+                @include flexCenter(row, center, center);
+                // display: flex;
+                // justify-content: center;
+                // align-items: center;
+                img {
+                    width: 14vw;
+                    height: 30vh;
+                    object-fit: cover;
+                    border-radius: 8px;
+                }
+            }
+
+            h3 {
+                font-size: $font-h3;
+                font-weight: 600;
+                margin-bottom: 10px;
+            }
+
+            p {
+                font-size: $paragraph-size;
+                font-weight: 300;
+                margin: 0;
+            }
+        }
+    }
+    
+    .product__furniture {
+        @extend .product__healthcare;
+        
+        .product__section--card {
+            background-color: $tertiary-color;
+            color:white;
+            // box-shadow: 5px 5px 10px $primary-text-color;
+
+            // &:hover {
+            //     transform: scale(1.1);
+            //     transition-duration: 0.2s;
+            // }
+
+            .product__section--icon {
+                @include svgStyle(white, 31px, 31px);
+            }
+        }
+    }
+}
+
+.information__about {
+    padding-bottom: 60px;
+    h2 {
+        font-weight: 700;
+        font-size: $font-h1;
+    }
+
+    .information__about--mision {
+        width: 100%;
+        @include flexCenter(row, space-evenly, center);
+
+        .about__earth {
+            width: 35vw;
+            display: flex;
+            gap: 40px;
+
+            img {
+                object-fit: contain;
+            }
+            
+            p {
+                color: #E86424;
+                font-weight: 500;
+                font-size: $font-p;
+                text-align: center;
+            }
+        }
+
+        .about__innovation {
+            @extend .about__earth
+        }
+    }
+}
+
+.information__gallery {
+            
+    .information__gallery--image {
+        width: 100%;
+        @include flexCenter(row, space-between, center);
+
+        img {
+            object-fit: cover;
+            width: 25vw;
+            height: 45vh;
+            border-radius: 16px;
+            box-shadow: 5px 5px 10px $primary-text-color;
+            
+            &:hover {
+                transform: scale(1.1);
+                transition-duration: 0.2s;
+            }
+        }
+    }
+}
+
+.information__location {
+    margin-bottom: 80px;
+    color: #E86424;
+    font-size: $paragraph-size;
+    
+    h2 {
+        color: $primary-text-color;
+        padding-top: 60px;
+        margin: 0;
+    }
+
+    .location_image {
+        @include flexCenter(row, center, center);
+        padding-bottom: 30px;
+    }
+
+    h3, p {
+        margin: 5px 0px;
+    }
+}
+
+footer {
+    background-color: $additional-color;
+    color: white;
+    width: 100%;
+    height: auto;
+    padding-left: 60px;
+    padding-top: 10px;
+    font-size: $paragraph-size;
+
+    .socialmedia {
+        @include flexCenter(row, center, center);
+        gap: 60px;
+        padding-bottom: 30px;
+
+        .socialmedia__instagram {
+            &:hover {
+                cursor: pointer;
+                transform: scale(1.2);
+                transition-duration: 0.2s;
+            }
+        }
+
+        .socialmedia__facebook {
+            @extend .socialmedia__instagram;
+        }
+
+        .socialmedia__twitter {
+            @extend .socialmedia__instagram;
+        }
+    }
+}
+
+@import 'medios';

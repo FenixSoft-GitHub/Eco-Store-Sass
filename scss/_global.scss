@@ -1,0 +1,45 @@
+// Globales
+
+$primary-color:#FFEFE7;
+$secundary-color:#FFDAC6;
+$tertiary-color:#BABD8D;
+$primary-text-color:#7C6A0A;
+$additional-color: #FA9500;
+$paragraph-size: 1.5rem;
+$font-stack: 'IBM Plex Sans' , sans-serif;
+
+$font-p: 1.8rem;
+$font-h1: 3.0rem;
+$font-h2: 2.4rem;
+$font-h3: 2.0rem;
+
+html{
+    font-size: 62.5%;
+    box-sizing: border-box;
+}
+
+*, *::before, *::after{
+    box-sizing: inherit;
+}
+
+body{
+    margin:0;
+    padding:0;
+    line-height: 1.3;
+    font-family: $font-stack;
+    background-color: $primary-color;
+    color: $primary-text-color;
+    svg path {
+        stroke: currentColor;        
+    }
+}
+
+.btn {
+    background: none;
+    border-style: none;
+    cursor: pointer;
+    &:hover {
+        transform: scale(1.1);
+        transition-duration: 0.2s;
+    }
+}

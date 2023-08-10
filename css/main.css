@@ -1,0 +1,440 @@
+html {
+  font-size: 62.5%;
+  box-sizing: border-box;
+}
+
+*, *::before, *::after {
+  box-sizing: inherit;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  line-height: 1.3;
+  font-family: "IBM Plex Sans", sans-serif;
+  background-color: #FFEFE7;
+  color: #7C6A0A;
+}
+body svg path {
+  stroke: currentColor;
+}
+
+.btn, article .btn-principal {
+  background: none;
+  border-style: none;
+  cursor: pointer;
+}
+.btn:hover, article .btn-principal:hover {
+  transform: scale(1.1);
+  transition-duration: 0.2s;
+}
+
+header {
+  position: fixed;
+  top: 0;
+  border-top: 5px solid rgb(52, 53, 51);
+  width: 100%;
+}
+
+.navbar {
+  inline-size: 100%;
+  padding-inline: 2.5rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #FFDAC6;
+}
+.navbar .navbar__logo {
+  font-family: "IBM Plex Sans", sans-serif;
+  font-size: 3.5rem;
+  font-weight: 400;
+  font-style: italic;
+  text-shadow: -1px -1px 3px #999, 0 0 1px darkred, 1px 1px 1px #FA9500, 2px 2px 1px #555, 3px 3px 1px #222, 4px 4px 1px #000;
+}
+.navbar .navbar__icons {
+  display: flex;
+  gap: 0.5rem;
+}
+.navbar .navbar__icons button {
+  background: none;
+  border-style: none;
+  cursor: pointer;
+}
+.navbar .navbar__icons button:hover {
+  transform: scale(1.2);
+  transition-duration: 0.2s;
+}
+.navbar .navbar__icons svg {
+  width: 30px;
+  height: 30px;
+}
+.navbar .navbar__icons svg path {
+  stroke: #7C6A0A;
+}
+.navbar .navbar__icons .navbar__icons--profile:hover svg path {
+  stroke: #E86424;
+}
+
+article {
+  width: auto;
+  padding: 20rem 3rem 2.5rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: start;
+}
+article .main__info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: start;
+  padding-top: 2.5rem;
+  gap: 2.5rem;
+}
+article h1 {
+  font-size: 3.5rem;
+  margin-top: 30px;
+  padding: 0px;
+  font-weight: 600;
+}
+article p {
+  width: 45%;
+  font-size: 1.8rem;
+  font-weight: 400;
+  line-height: 24px;
+}
+article .btn-principal {
+  width: 18vw;
+  height: 5vw;
+  font-weight: 700;
+  font-size: 2.3rem;
+  border-radius: 3.5rem;
+  color: #FFEFE7;
+  background-color: #FA9500;
+}
+article .main_image img {
+  width: 30vw;
+  height: 75vh;
+  border-radius: 19px;
+  box-shadow: 5px 5px 10px;
+}
+
+section {
+  width: auto;
+  height: auto;
+  padding: 0px 30px;
+}
+section h2 {
+  font-size: 3rem;
+  font-weight: 700;
+  padding-bottom: 3.75rem;
+}
+section .product__healthcare .product__section, section .product__furniture .product__section {
+  width: auto;
+  height: auto;
+  padding-bottom: 30px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: start center;
+  flex-wrap: wrap;
+  -moz-column-gap: 200px;
+       column-gap: 200px;
+  row-gap: 80px;
+}
+section .product__healthcare .product__section--card, section .product__furniture .product__section--card {
+  width: 20vw;
+  height: 55vh;
+  background-color: #FFDAC6;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 5px 5px 10px #7C6A0A;
+}
+section .product__healthcare .product__section--card:hover, section .product__furniture .product__section--card:hover {
+  transform: scale(1.1);
+  transition-duration: 0.2s;
+}
+section .product__healthcare .product__section--card .product__section--icon, section .product__furniture .product__section--card .product__section--icon {
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
+  padding-bottom: 12px;
+}
+section .product__healthcare .product__section--card .product__section--icon svg, section .product__furniture .product__section--card .product__section--icon svg {
+  width: 31px;
+  height: 31px;
+}
+section .product__healthcare .product__section--card .product__section--icon svg path, section .product__furniture .product__section--card .product__section--icon svg path {
+  stroke: #7C6A0A;
+}
+section .product__healthcare .product__section--card .product__section--img, section .product__furniture .product__section--card .product__section--img {
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+section .product__healthcare .product__section--card .product__section--img img, section .product__furniture .product__section--card .product__section--img img {
+  width: 14vw;
+  height: 30vh;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-radius: 8px;
+}
+section .product__healthcare .product__section--card h3, section .product__furniture .product__section--card h3 {
+  font-size: 2rem;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+section .product__healthcare .product__section--card p, section .product__furniture .product__section--card p {
+  font-size: 1.5rem;
+  font-weight: 300;
+  margin: 0;
+}
+section .product__furniture .product__section--card {
+  background-color: #BABD8D;
+  color: white;
+}
+section .product__furniture .product__section--card .product__section--icon svg {
+  width: 31px;
+  height: 31px;
+}
+section .product__furniture .product__section--card .product__section--icon svg path {
+  stroke: white;
+}
+
+.information__about {
+  padding-bottom: 60px;
+}
+.information__about h2 {
+  font-weight: 700;
+  font-size: 3rem;
+}
+.information__about .information__about--mision {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+}
+.information__about .information__about--mision .about__earth, .information__about .information__about--mision .about__innovation {
+  width: 35vw;
+  display: flex;
+  gap: 40px;
+}
+.information__about .information__about--mision .about__earth img, .information__about .information__about--mision .about__innovation img {
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+.information__about .information__about--mision .about__earth p, .information__about .information__about--mision .about__innovation p {
+  color: #E86424;
+  font-weight: 500;
+  font-size: 1.8rem;
+  text-align: center;
+}
+.information__gallery .information__gallery--image {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+.information__gallery .information__gallery--image img {
+  -o-object-fit: cover;
+     object-fit: cover;
+  width: 25vw;
+  height: 45vh;
+  border-radius: 16px;
+  box-shadow: 5px 5px 10px #7C6A0A;
+}
+.information__gallery .information__gallery--image img:hover {
+  transform: scale(1.1);
+  transition-duration: 0.2s;
+}
+
+.information__location {
+  margin-bottom: 80px;
+  color: #E86424;
+  font-size: 1.5rem;
+}
+.information__location h2 {
+  color: #7C6A0A;
+  padding-top: 60px;
+  margin: 0;
+}
+.information__location .location_image {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding-bottom: 30px;
+}
+.information__location h3, .information__location p {
+  margin: 5px 0px;
+}
+
+footer {
+  background-color: #FA9500;
+  color: white;
+  width: 100%;
+  height: auto;
+  padding-left: 60px;
+  padding-top: 10px;
+  font-size: 1.5rem;
+}
+footer .socialmedia {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 60px;
+  padding-bottom: 30px;
+}
+footer .socialmedia .socialmedia__instagram:hover, footer .socialmedia .socialmedia__twitter:hover, footer .socialmedia .socialmedia__facebook:hover {
+  cursor: pointer;
+  transform: scale(1.2);
+  transition-duration: 0.2s;
+}
+@media (min-width: 1400px) {
+  nav, .presentacion, footer {
+    width: auto;
+    margin: auto;
+  }
+}
+@media (max-width: 992px) {
+  nav {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: wrap;
+  }
+}
+@media (max-width: 420px) {
+  nav {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    inline-size: 90%;
+  }
+  .presentacion {
+    display: flex;
+    flex-direction: column-reverse;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+  .presentacion .presentacion div {
+    text-align: center;
+    margin-bottom: 30px;
+  }
+  .presentacion p {
+    width: 95%;
+    font-size: 1.5rem;
+    font-weight: 400;
+    line-height: 24px;
+  }
+  .presentacion .main_image img {
+    width: 95%;
+    height: auto;
+  }
+  .presentacion .btn-principal {
+    margin-bottom: 30px;
+    width: 95%;
+    height: 50px;
+    font-weight: 700;
+  }
+  section .product__healthcare .product__section, section .product__furniture .product__section {
+    width: 100%;
+    display: grid;
+    grid-auto-flow: column;
+    overflow-x: scroll;
+    justify-content: initial;
+    gap: 40px;
+    padding: 20px 20px;
+  }
+  section .product__healthcare ::-webkit-scrollbar, section .product__furniture ::-webkit-scrollbar {
+    height: 14px;
+  }
+  section .product__healthcare ::-webkit-scrollbar-thumb, section .product__furniture ::-webkit-scrollbar-thumb {
+    background-color: #FA9500;
+    border-radius: 8px;
+  }
+  section .product__healthcare .product__section--card, section .product__furniture .product__section--card {
+    width: 280px;
+    height: 420px;
+    padding: 10px 11px 10px 11px;
+    margin-bottom: 10px;
+  }
+  section .product__healthcare .product__section--card:hover, section .product__furniture .product__section--card:hover {
+    transform: none;
+  }
+  section .product__healthcare .product__section--card .product__section--img, section .product__furniture .product__section--card .product__section--img {
+    padding: 15px 5px 0 5px;
+  }
+  section .product__healthcare .product__section--card .product__section--img img, section .product__furniture .product__section--card .product__section--img img {
+    width: 100%;
+    height: 220px;
+  }
+  .information__gallery {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .information__gallery .information__gallery--image {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+  }
+  .information__gallery .information__gallery--image img {
+    width: 95%;
+    height: auto;
+    margin-bottom: 30px;
+  }
+  .information {
+    text-align: center;
+  }
+  .information .information__about {
+    padding-bottom: 0px;
+  }
+  .information .information__about .information__about--mision {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .information .information__about .information__about--mision .about__earth, .information .information__about .information__about--mision .about__innovation {
+    flex-direction: column;
+    width: auto;
+    align-items: center;
+  }
+  .information .information__about .information__about--mision .about__earth img, .information .information__about .information__about--mision .about__innovation img {
+    width: 35vw;
+  }
+  .information .information__about .information__about--mision .about__earth p, .information .information__about .information__about--mision .about__innovation p {
+    width: 100%;
+    font-size: 1.5rem;
+    padding-bottom: 40px;
+  }
+  footer {
+    width: auto;
+    height: auto;
+    padding: 30px;
+    margin-bottom: 120px;
+  }
+  footer .socialmedia {
+    width: 100%;
+    gap: 20px;
+  }
+  footer .socialmedia img {
+    width: 26px;
+    height: 26px;
+  }
+}/*# sourceMappingURL=main.css.map */

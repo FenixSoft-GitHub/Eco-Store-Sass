@@ -1,0 +1,10 @@
+@media (max-width: 420px) {
+  .presentacion div {
+    flex-direction: column;
+    text-align: center;
+    margin-bottom: 30px;
+  }
+  .presentacion div h1, .presentacion div p {
+    padding: 0;
+  }
+}/*# sourceMappingURL=medios.css.map */
