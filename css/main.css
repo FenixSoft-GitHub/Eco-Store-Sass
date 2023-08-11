@@ -32,7 +32,8 @@ body svg path {
 header {
   position: fixed;
   top: 0;
-  border-top: 5px solid rgb(52, 53, 51);
+  border-top: 5px solid #7C6A0A;
+  box-shadow: 15px 15px 40px #FFDAC6;
   width: 100%;
 }
 
@@ -43,14 +44,16 @@ header {
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  background-color: #FFDAC6;
+  background: linear-gradient(#FFDAC6, #FFEFE7);
 }
 .navbar .navbar__logo {
-  font-family: "IBM Plex Sans", sans-serif;
-  font-size: 3.5rem;
-  font-weight: 400;
+  font-family: "Dancing Script", cursive;
+  font-size: 4rem;
+  font-weight: 700;
   font-style: italic;
-  text-shadow: -1px -1px 3px #999, 0 0 1px darkred, 1px 1px 1px #FA9500, 2px 2px 1px #555, 3px 3px 1px #222, 4px 4px 1px #000;
+  color: #7C6A0A;
+  text-shadow: 5px 5px 10px #7C6A0A;
+  margin: 16px;
 }
 .navbar .navbar__icons {
   display: flex;
@@ -322,11 +325,16 @@ footer .socialmedia .socialmedia__instagram:hover, footer .socialmedia .socialme
     align-items: center;
     inline-size: 90%;
   }
+  .navbar .navbar__logo {
+    font-size: 3rem;
+    margin: 10px;
+  }
   .presentacion {
     display: flex;
     flex-direction: column-reverse;
     justify-content: center;
     align-items: center;
+    padding-top: 12rem;
     text-align: center;
   }
   .presentacion .presentacion div {

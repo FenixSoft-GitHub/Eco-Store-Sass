@@ -50,7 +50,8 @@
 header{
     position:fixed;
     top:0;
-    border-top: 5px solid rgb(52, 53, 51);
+    border-top: 5px solid $primary-text-color;
+    box-shadow: 15px 15px 40px $secundary-color;
     width:100%;
 }
 
@@ -58,20 +59,25 @@ header{
     inline-size: 100%;
     padding-inline: 2.5rem;
     @include flexCenter(row, space-between, center);
-    background-color: $secundary-color;
+    // background-color: $primary-color;
+    background: linear-gradient($secundary-color, $primary-color);
 
     .navbar__logo {
-        font-family: 'IBM Plex Sans', sans-serif;
-        font-size: 3.5rem;
-        font-weight: 400;
+        // font-family: 'Kalam', cursive;
+        font-family: 'Dancing Script', cursive;
+        font-size: 4rem;
+        font-weight: 700;
         font-style: italic;
-        text-shadow:
-            -1px -1px 3px #999,
-            0 0 1px darkred,
-            1px 1px 1px $additional-color,
-            2px 2px 1px #555,
-            3px 3px 1px #222,
-            4px 4px 1px #000;
+        color: $primary-text-color;
+        text-shadow: 5px 5px 10px $primary-text-color;
+        margin: 16px;
+        // text-shadow:
+        //     -1px -1px 3px #999,
+        //     0 0 1px darkred,
+        //     1px 1px 1px $additional-color,
+        //     2px 2px 1px #555,
+        //     3px 3px 1px #222,
+        //     4px 4px 1px #000;
     }
 
     .navbar__icons {
